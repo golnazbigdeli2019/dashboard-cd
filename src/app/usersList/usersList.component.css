@@ -1,0 +1,59 @@
+.usersList {
+    border-radius: 4px;
+    border: 1px solid #fff;
+    padding: 8px;
+}
+#filter, #username{
+  min-width: 170px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin:10px;
+}
+div.name {
+  padding-top: 10px;
+  float:left;
+}
+div.email {
+  padding-top: 25px;
+  text-align: right;
+  padding-right: 20px;
+}
+.form-inline {
+  float: right;
+}
+label {
+  text-align: left;
+}
+table {
+  border: 1px solid #cccc;
+}
+.email-in-list{
+  display: none;
+  color: #0ebff9;
+}
+.email {
+  color: #0ebff9;
+}
+
+@media (max-width: 768px) {
+  .email-in-list{
+    display: block;
+  }
+
+  .email-in-td{
+    display: none;
+  }
+
+  .form-inline{
+    float: none;
+  }
+
+  table {
+    border: unset;
+  }
+}
+
+

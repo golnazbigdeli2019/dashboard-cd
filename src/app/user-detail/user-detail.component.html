@@ -1,0 +1,39 @@
+<button type="button" class="btn btn-outline-secondary" (click)="goHome()">Back</button>
+<h1>User > {{(user$ | async)?.name}}</h1>
+<div class="container-fluid">
+  <div class="row details">
+    <div class="col-sm-4 ">
+      <div class="contact-container">
+        <h3>Contact Info</h3>
+        <p>Username: {{(user$ | async)?.username}}</p>
+        <p>Email: {{(user$ | async)?.email}}</p>
+        <p>Phone: {{(user$ | async)?.phone}}</p>
+        <p>Website: {{(user$ | async)?.website}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="contact-container">
+        <h3>Address</h3>
+        <p>{{(user$ | async)?.address?.suite}}, {{(user$ | async)?.address?.street}},
+          {{(user$ | async)?.address?.city}}, {{(user$ | async)?.address?.zipcode}}
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="contact-container">
+        <h3>Company</h3>
+        <p>{{(user$ | async)?.company?.name}}</p>
+        <p>{{(user$ | async)?.company?.bs}}</p>
+        <p>"{{(user$ | async)?.company?.catchPhrase}}"</p>
+      </div>
+    </div>
+  </div>
+  <div class="row posts">
+    <div class="col-sm-4" *ngFor="let post of posts$ | async">
+      <div class="post">
+        <h3>{{post.title}}</h3>
+        <p>{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

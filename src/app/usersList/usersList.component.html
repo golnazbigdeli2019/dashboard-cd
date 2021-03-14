@@ -1,0 +1,41 @@
+<div class='wrapper'>
+    <h1>Users</h1>
+  <div id='search_form'>
+    <form class="form-inline">
+      <div class='form-group usersList'>
+        <label for='search'>Search</label>
+        <br>
+        <input type='search' id='username' class='form-control' placeholder="Please search here" [(ngModel)]="filter"
+          name="search">
+      </div>
+      <div class='form-group usersList'>
+        <label for='sort-by'>Sort By</label>
+        <br>
+        <select class="form-control" name='filter' id='filter' [(ngModel)]='selectedOption'>
+          <option>Name</option>
+          <option>Username</option>
+          <option>Email</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let user of usersList | searchBy: filter | sortBy:(selectedOption || 'name')">
+        <td id="name">
+          <div id="avatar"><img src="../../assets/images/avatar.png" class="img-fluid avatar" alt="Responsive image"></div>
+          <div class="name">
+            <p><a [routerLink]="['/users',user.id]"> {{user.name}}</a></p>
+            <p>{{user.username}}</p>
+            <p class="email-in-list">{{user.email}}</p>
+          </div>
+        </td>
+        <td class="email-in-td">
+          <div class="email">
+            <p>{{user.email}}</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
