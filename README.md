@@ -23,7 +23,11 @@ npm i
 npm start
 
 ```
- Navigate to `http://localhost:4200/`
+Navigate to `http://localhost:4200/`
+
+## Live demo
+
+Navigate to `https://cd-dashboard-dc704.firebaseapp.com/`
 
 ## Build
 
